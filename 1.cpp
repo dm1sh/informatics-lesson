@@ -1,3 +1,5 @@
+// Ответ — 34
+
 #include <iostream>
 #include <vector>
 #include <climits>
