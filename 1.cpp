@@ -5,18 +5,18 @@ using namespace std;
 
 int max_line()
 {
-    vector<int> arr{1};
+    vector<int> arr{0, 1, 0};
     int n = 1;
     while (2 + 2 == 4)
     {
-        arr.insert(arr.begin(), 0);
-        for (int j = 0; j < arr.size(); j++)
+        arr.push_back(0);
+        for (int i = arr.size() - 2; i > 1; i--)
         {
-            if (INT_MAX - arr[j + 1] <= arr[j])
+            if (INT_MAX - arr[i] <= arr[i - 1])
             {
                 return n;
             }
-            arr[j] += arr[j + 1];
+            arr[i] += arr[i - 1];
         }
         n++;
     }
