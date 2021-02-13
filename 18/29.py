@@ -10,10 +10,7 @@ def add_10(matrix, x, y, dir):
   return 0
 
 
-# n = int(input())
-
 with open('./dat/18-J5.csv', 'r', encoding='utf-8-sig') as f:
-  # with open('./input.txt', 'r') as f:
   matrix = [[len(i.strip()) and int(i) for i in l.split(';')]
             for l in f.readlines()]
   arr = []
@@ -32,17 +29,5 @@ with open('./dat/18-J5.csv', 'r', encoding='utf-8-sig') as f:
                  new_row[el_index-1] + add_10(matrix, row_index, el_index, 1)) + el
         new_row.append(ns)
     arr.append(new_row)
-
-for row in matrix:
-  for el in row:
-    print(el, end=' ')
-  print()
-
-print("****************************Delimeter****************************")
-
-for row in arr:
-  for el in row:
-    print(el, end=' ')
-  print()
 
 print(arr[-1][-1])

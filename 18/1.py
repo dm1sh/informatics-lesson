@@ -17,16 +17,6 @@ with open('./dat/18-6.txt', 'r') as f:
         new_row.append(ns)
     arr.append(new_row)
 
-# for row in matrix:
-#   for el in row:
-#     print(el, end=' ')
-#   print()
-
-# print("-------------------------Delimeter-------------------------")
-
-# for row in arr:
-#   for el in row:
-#     print(el, end=' ')
-#   print()
-
 print(arr[-1][-1])
+
+# 1418 743

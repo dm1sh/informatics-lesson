@@ -3,6 +3,8 @@
 
 using namespace std;
 
+// 345 (Даже написал на плюсах, не знаю, что с ней не так)
+
 int main()
 {
   ifstream inp("dat/18-17.txt");
