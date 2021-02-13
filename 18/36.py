@@ -9,10 +9,10 @@ with open('./dat/18-17.txt', 'r') as f:
     n = float(sn)
     if n < p:
       s += n
-    else:
       if s > ms:
         ms = s
+    else:
       s = 0
     p = n
 
-print(int(ms))
+print(ms)
