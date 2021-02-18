@@ -11,19 +11,31 @@ def count(a: list[list[int]], i: int, j: int) -> list[int]:
 
   c = a[i][j]
 
+  if r == None and b == None and i == len(a)-1 and j == len(a[0])-1:
+    return [[c, [[i, j]]], [c, [[i, j]]]]
   if r == None and b == None:
-    return [c, c]
+    return None
   if r == None:
-    return [c + b[0], c + b[1]]
+    return [[c + b[0][0], [*b[0][1], [i, j]]], [c + b[1][0], [*b[1][1], [i, j]]]]
   if b == None:
-    return [c + r[0], c + r[1]]
+    return [[c + r[0][0], [*r[0][1], [i, j]]], [c + r[1][0], [*r[1][1], [i, j]]]]
 
-  return [c + max(r[0], b[0]), c + min(r[1], b[1])]
+  mmax = max(r[0][0], b[0][0])
+  mmin = min(r[1][0], b[1][0])
+
+  Marr = r[0][1] if mmax == r[0][0] else b[0][1]
+  marr = r[1][1] if mmin == r[1][0] else b[1][1]
+
+  return [[c + mmax, [*Marr, [i, j]]], [c + mmin, [*marr, [i, j]]]]
 
 
 with open("dat/18-13.csv", 'r') as f:
-  a = [[int(i) for i in row.split(';')] for row in f.readlines()]
+# with open("24.csv", 'r') as f:
+  a = [[int(i.strip()) for i in row.split(';')] for row in f.readlines()]
 
-  print(count(a, 0, 0))
+  ret = count(a, 0, 0)
 
-# 1535 330 (не знаю как починить с минимумом)
+  print(ret[0])
+  print(ret[1])
+
+# 1535 975

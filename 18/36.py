@@ -1,4 +1,4 @@
-# 345 (Даже написал на плюсах, не знаю, что с ней не так)
+# 495 (я дурашка)
 
 with open('./dat/18-17.txt', 'r') as f:
   p = float('+inf')
@@ -12,7 +12,7 @@ with open('./dat/18-17.txt', 'r') as f:
       if s > ms:
         ms = s
     else:
-      s = 0
+      s = n
     p = n
 
-print(ms)
+print(int(ms))

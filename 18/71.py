@@ -10,8 +10,10 @@ def count(a, i, j):
 
   c = a[i][j] if a[i][j] % 3 == 0 or a[i][j] % 4 == 0 else 0
 
-  if l == None and t == None:
+  if l == None and t == None and i == 0 and j == 0:
     return [c, c]
+  if l == None and t == None:
+    return None
   if l == None:
     return [c + t[0], c + t[1]]
   if t == None:
